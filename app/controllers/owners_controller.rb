@@ -31,9 +31,9 @@ class OwnersController < ApplicationController
 
   def adopt_from_list
     owner = Owner.find(params[:owner_id])
-    dog_names = params[:dogs].strip.split(",")
+    dog_names = params[:dogs].delete(" ").split(",")
     dog_names.each do |dog_name|
-      owner.ownerships.create(dog: Dog.where(name: dog_name), length: 0)
+      owner.ownerships.create(dog: Dog.where(name: dog_name)[0], length: 0)
     end
     redirect_to "/owners"
   end
