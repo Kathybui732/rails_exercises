@@ -12,8 +12,8 @@ class DogsController < ApplicationController
   end
 
   def create
-    dog = Dog.create(dog_params)
-    if dog.save
+    new_dog = Dog.create(dog_params)
+    if new_dog.save
       redirect_to "/dogs"
     end
   end
