@@ -7,6 +7,7 @@ class DogsController < ApplicationController
   end
 
   def new
+    render "dogs/new"
   end
 
   def edit
