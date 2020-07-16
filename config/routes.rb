@@ -9,7 +9,13 @@ Rails.application.routes.draw do
   patch '/dogs/:id', to: 'dogs#update'
   delete '/dogs/:id', to: 'dogs#destroy'
 
-  get '/dogs/:id/tricks', to: 'tricks#index'
-  get '/dogs/:id/tricks/new', to: 'tricks#new'
+  get '/dogs/:dog_id/tricks', to: 'tricks#index'
+  get '/dogs/:dog_id/tricks/new', to: 'tricks#new'
+  post '/dogs/:dog_id/tricks', to: 'tricks#create'
 
+  #Non RESTful routes
+  get '/hello', to: 'nonrestful#hello'
+  get '/greetings/:name', to: 'nonrestful#what_is_your_name'
+  patch '/items/:the_item_id/deactivate', to: 'nonrestful#deactivate'
+  delete '/subtract/:x/from/:y', to: 'nonrestful#subtract'
 end

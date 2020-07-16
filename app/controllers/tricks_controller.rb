@@ -4,7 +4,6 @@ class TricksController < ApplicationController
   end
 
   def new
-    require "pry"; binding.pry
     @dog_id = params[:dog_id]
   end
 
